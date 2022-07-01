@@ -62,6 +62,11 @@ inputs:
       The architectures to build for.
     default: ''
 
+  apko-image:
+    description: |
+      The apko image to use for building the image
+    default: "docker://ghcr.io/chainguard-dev/apko:v0.4.0"
+
 outputs:
   digest:
     value: ${{ steps.apko.outputs.digest }}
@@ -99,6 +104,7 @@ runs:
         use-docker-mediatypes: ${{ inputs.use-docker-mediatypes }}
         keyring-append: ${{ inputs.keyring-append }}
         archs: ${{ inputs.archs }}
+        apko-image: ${{ inputs.apko-image }}
 
     - uses: docker/login-action@bb984efc561711aaa26e433c32c3521176eae55b # v1.13.0
       with:
