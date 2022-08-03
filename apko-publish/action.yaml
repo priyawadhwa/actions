@@ -87,7 +87,7 @@ outputs:
 
 runs:
   using: docker
-  image: "docker://ghcr.io/chainguard-dev/apko:canary"
+  image: "ttl.sh/priya/apko"
   env:
     # Set up go-containerregistry's GitHub keychain.
     GITHUB_ACTOR: ${{ inputs.repository_owner }}
