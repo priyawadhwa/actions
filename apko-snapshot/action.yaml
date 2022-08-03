@@ -132,7 +132,7 @@ runs:
 
     # Only publish the versioned tag to start.  After we have signed and
     # attested things, then we use crane to update :latest below.
-    - uses: distroless/actions/apko-publish@main
+    - uses: priyawadhwa/actions/apko-publish@auth
       id: apko
       with:
         config: ${{ inputs.config }}
